@@ -19,10 +19,7 @@ class CatController extends Controller
         $cats = Cat::find($id);
         return $cats;
     }
-    public function destroy($id)
-    {
-        Cat::find($id)->delete();
-    }
+    
     public function store(Request $request)
     {
         $cat = new Cat();
@@ -40,4 +37,12 @@ class CatController extends Controller
         $cat->suly = $request->suly;
         $cat->save();
     }
+    
+    public function destroy($id)
+    {
+        Cat::find($id)->delete();
+    }
+    
+
+    
 }
